@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app"> 
+        <ul>
+            <li v-for = "item in movies" >{{item}}</li>
+        </ul>
+    </div>
+
+    <div id = "app1">
+        <h2>当前计数：{{counter}}</h2>
+        <button v-on:click = "add">+</button>
+        <button v-on:click = "sub">-</button>
+    </div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+    const app = new Vue({
+        el: '#app',
+        data: {
+            message: '第二天',
+            movies: ['星际','风险','烧苗']
+        }
+    });
+
+
+    const app1 = new Vue({
+        el: '#app1',
+        data: {
+            counter: 0
+        },
+        methods: {
+            add: function(){
+                this.counter++;
+            },
+            sub:function(){
+                this.counter--;
+            }
+        }
+    });
+
+
+</script>
+</html>
